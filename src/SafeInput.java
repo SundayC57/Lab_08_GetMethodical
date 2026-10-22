@@ -60,6 +60,32 @@ Scanner pipe = new Scanner(System.in);
     public static int getRangedInt(Scanner pipe, String prompt, int low, int high){
        int retRange = 0;
        boolean done = false;
+       String trash = " ";
+       int userNum = 0;
+
+
+        do{
+            System.out.println("Please enter a number between "+ low + " and " + high +": " );
+
+            if(pipe.hasNextInt()) {
+                userNum = pipe.nextInt();
+                if(userNum >= low && userNum <= high) {
+                    done = true;
+                }
+                else{
+                    IO.println("You guessed a number out of range: " + userNum + " Try again!");
+                    done = false;
+                }
+
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                IO.println("You entered an invalid input: " + trash + " Please try again and enter a number [" + low + "-" + high + "]");
+            }
+
+
+        }while(!done);
 
 
         return(retRange);
