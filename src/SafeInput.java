@@ -66,22 +66,23 @@ Scanner pipe = new Scanner(System.in);
 
 
         do{
-            System.out.print(prompt+ " " + low + " and " + high +": " );
+            System.out.print(prompt+ " [" + low + "-" + high +"]: " );
 
             if(pipe.hasNextInt()){
                 userNum = pipe.nextInt();
                 if(userNum >= low && userNum <= high) {
                     done = true;
+                    retRange = userNum;
                 }
                 else{
-                    IO.println("You entered a number out of range: " + userNum + " Try again!");
+                    IO.println("You entered an input out of range: " + userNum + " Try again, range is ["+low+"-"+high+"]");
                     done = false;
                 }
             }
             else
             {
                 trash = pipe.nextLine();
-                IO.println("You entered an invalid input: " + trash + " Please try again and enter a number [" + low + "-" + high + "]");
+                IO.println("You entered an invalid input: " + trash + " Please try again and " + prompt + " [" + low + "-" + high + "]");
             }
         }while(!done);
 
@@ -89,4 +90,51 @@ Scanner pipe = new Scanner(System.in);
         return(retRange);
     }
 
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high){
+        double retRange = 0;
+        boolean done = false;
+        String trash = " ";
+        double userNum = 0;
+
+
+        do{
+            System.out.print(prompt+ " [" + low + "-" + high +"]: " );
+
+            if(pipe.hasNextDouble()){
+                userNum = pipe.nextDouble();
+                if(userNum >= low && userNum <= high) {
+                    done = true;
+                    retRange = userNum;
+                }
+                else{
+                    IO.println("You entered an input out of range: " + userNum + " Try again, range is ["+low+"-"+high+"]");
+                    done = false;
+                }
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                IO.println("You entered an invalid input: " + trash + " Please try again and " + prompt + " [" + low + "-" + high + "]");
+            }
+        }while(!done);
+
+
+        return(retRange);
+    }
+
+    public static boolean getYNConfirm(Scanner pipe, String prompt){
+        boolean done = false;
+        String trash = " ";
+        boolean retYN = false;
+
+        do{
+
+
+        }while(!done);
+
+
+        return(retYN);
+    }
 }
+
+/* censor color hex val:  */

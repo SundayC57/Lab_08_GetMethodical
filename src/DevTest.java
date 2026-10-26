@@ -14,10 +14,13 @@ public class DevTest {
         double double1 = SafeInput.getDouble(pipe, "Decimal please");
         System.out.println("You entered: " + double1);
 
+         int numRange = SafeInput.getRangedInt(pipe, "Enter a number between", 12, 20);
+         System.out.println("You entered: " + numRange);
+
  */
 
- int numRange = SafeInput.getRangedInt(pipe, "Enter a number between", 12, 20);
- System.out.println("You entered: " + numRange);
+ double numRange2 = SafeInput.getRangedDouble(pipe, "Enter a number between", 3.2, 40.8);
+ System.out.println("You entered: " + numRange2);
 
 
 
