@@ -16,7 +16,8 @@ public class DevTest {
 
  */
 
-
+ int numRange = SafeInput.getRangedInt(pipe, "Enter a number between", 12, 20);
+ System.out.println("You entered: " + numRange);
 
 
 
