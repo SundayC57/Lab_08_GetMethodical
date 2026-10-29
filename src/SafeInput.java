@@ -118,7 +118,6 @@ Scanner pipe = new Scanner(System.in);
             }
         }while(!done);
 
-
         return(retRange);
     }
 
@@ -128,13 +127,45 @@ Scanner pipe = new Scanner(System.in);
         boolean retYN = false;
 
         do{
+            IO.print(prompt + "[Y/N]: ");
+            String response = pipe.nextLine();
 
+            if(response.equalsIgnoreCase("Y") || response.equalsIgnoreCase("YES") ){
+                done = true;
+                retYN = true;
+            }else if(response.equalsIgnoreCase("N") || response.equalsIgnoreCase("NO") ){
+                done = true;
+                retYN = false;
+            }else{
+                IO.println("You entered an invalid input: '" + response + "' please answer yes or no");
+                done = false;
+            }
 
         }while(!done);
 
 
         return(retYN);
     }
+
+    public static String getRegExString(Scanner pipe, String prompt, String regEx){
+        boolean done = false;
+        String retRegEx = " ";
+
+
+        do {
+            IO.print(prompt + ": ");
+            String response = pipe.nextLine();
+
+                if (response.matches(regEx)) {
+                    done = true;
+                } else {
+                    IO.println("You entered an invalid input: '" + retRegEx + "' please match this pattern: " + regEx);
+                }
+
+        }while(!done);
+
+        return(retRegEx);
+    }
 }
 
-/* censor color hex val:  */
+/* censor color hex val: #133313 */
