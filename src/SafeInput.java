@@ -157,9 +157,10 @@ Scanner pipe = new Scanner(System.in);
             String response = pipe.nextLine();
 
                 if (response.matches(regEx)) {
+                    retRegEx = response;
                     done = true;
                 } else {
-                    IO.println("You entered an invalid input: '" + retRegEx + "' please match this pattern: " + regEx);
+                    IO.println("You entered an invalid input: '" + response + "' please match this pattern: " + regEx);
                 }
 
         }while(!done);

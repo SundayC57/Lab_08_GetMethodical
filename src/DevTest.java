@@ -28,8 +28,8 @@ public class DevTest {
         }
 
  */
-    String getReg = SafeInput.getRegExString(pipe, "Please enter your phone number (XXX)-XXX-XXXX", "%3d-\\%3d-\\%4d$");
-    IO.print(getReg);
+    String getReg = SafeInput.getRegExString(pipe, "Please enter your phone number [XXX-XXX-XXXX]", "^\\d{3}-\\d{3}-\\d{4}$");
+    IO.println("You entered your number as: " + getReg);
 
     }
 }
