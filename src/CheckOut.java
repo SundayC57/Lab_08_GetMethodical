@@ -18,6 +18,6 @@ public class CheckOut {
 
 
         IO.print("Your final total is:");
-       System.out.printf("\s%.2f", total);
+       System.out.printf("\s$%.2f", total);
     }
 }

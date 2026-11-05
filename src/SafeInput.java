@@ -167,6 +167,42 @@ Scanner pipe = new Scanner(System.in);
 
         return(retRegEx);
     }
+
+    public static String prettyHeader(String msg){
+        int len =  msg.length();
+
+
+        for(int i = 0; i <= 60; i++){
+            IO.print("*");
+        }
+        IO.println();
+        int spaces = (60 - 6) - len;
+        int leftSpaces = spaces / 2;
+        int rightSpaces = spaces - leftSpaces;
+
+        IO.print("***");
+
+        for(int i = 0; i < leftSpaces; i++){
+            IO.print(" ");
+        }
+
+        IO.print(msg);
+        if (len % 2 != 0)
+            rightSpaces += 1;
+
+        for(int i = 0; i < rightSpaces; i++){
+            IO.print(" ");
+        }
+        IO.print("***");
+        IO.println();
+
+        for(int i = 0; i <= 60; i++){
+            IO.print("*");
+        }
+
+        return(" ");
+
+    }
 }
 
 /* censor color hex val: #133313 */
